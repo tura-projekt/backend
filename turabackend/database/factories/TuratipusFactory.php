@@ -17,7 +17,16 @@ class TuratipusFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            //'tipus' => rand(1, 1000),
+            'turanev' => fake('hu_HU')->word(),
+            'tajegyseg' => fake('hu_HU')->state(),
+            'nehezseg' => rand(1, 5),
+            'tavolsag' => rand(11, 99),
+            'szintkulonbseg' => rand(1, 1000),
+            'kerekpar' => rand(0, 1),
+            'indulashelye' => fake('hu_HU')->word(),
+            'erkezeshelye' => fake('hu_HU')->word(),
+            'leiras' => fake('hu_HU')->word(),
         ];
     }
 }
