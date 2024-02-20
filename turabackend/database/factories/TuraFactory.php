@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Turatipus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,7 @@ class TuraFactory extends Factory
     public function definition(): array
     {
         return [
-            'tipus' => rand(1, 1000),
+            'tipus_id' => Turatipus::all()->random()->tipus_id,
             'idopont' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
             'turavezeto' => rand(1, 1000),
             'ar' => rand(1, 5),

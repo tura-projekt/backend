@@ -17,7 +17,7 @@ class TuratipusFactory extends Factory
     public function definition(): array
     {
         return [
-            'tipus' => rand(1, 1000),
+            'tipus_id' => rand(1, 1000),
             'turanev' => fake('hu_HU')->word(),
             'tajegyseg' => fake('hu_HU')->state(),
             'nehezseg' => rand(1, 5),

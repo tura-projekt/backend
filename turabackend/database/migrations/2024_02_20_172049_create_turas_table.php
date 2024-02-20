@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('turas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipus')->references('tipus')->on('turatipuses');
+            $table->foreignId('tipus_id')->references('tipus_id')->on('turatipuses');
             $table->date('idopont');
             $table->integer('turavezeto');
             $table->integer('ar'); 
