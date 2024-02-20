@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Turatipus;
+use App\Models\Turavezeto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +21,7 @@ class TuraFactory extends Factory
         return [
             'tipus_id' => Turatipus::all()->random()->tipus_id,
             'idopont' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
-            'turavezeto' => rand(1, 1000),
+            'turavezeto' => Turavezeto::all()->random()->id,
             'ar' => rand(1, 5),
             'min_letszam' => rand(1, 50),
             'max_letszam' => rand(50, 100),
