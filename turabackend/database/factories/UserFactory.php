@@ -24,9 +24,19 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => fake('hu_HU')->name(),
+            'email' => fake('hu_HU')->unique()->safeEmail(),
+            
+        
+            'adress' => fake('hu_HU')->address(),
+            'telefonszam' => rand(111111, 9999999),
+            'regisztracio_datuma' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
+
+
             'email_verified_at' => now(),
+
+
+
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
