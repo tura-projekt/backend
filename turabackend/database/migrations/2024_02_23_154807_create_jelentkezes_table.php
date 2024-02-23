@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jelentkezes', function (Blueprint $table) {
-            $table->id();
+            $table->primary(['user_id', 'tura_id']);
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('tura_id')->references('id')->on('turas');
+            $table->date('jelentkezes_datuma');
+            
+            
+            $table->boolean('fizetve')->default(0);
             $table->timestamps();
         });
     }

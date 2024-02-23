@@ -29,16 +29,18 @@ class UserFactory extends Factory
             
         
             'adress' => fake('hu_HU')->address(),
-            'telefonszam' => rand(111111, 9999999),
+            
             'regisztracio_datuma' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
 
+                'telefonszam' => rand(111111, 9999999),
+    
 
-            'email_verified_at' => now(),
 
 
-
-            'password' => static::$password ??= Hash::make('password'),
+            'jelszo' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 
             'remember_token' => Str::random(10),
+
+            
         ];
     }
 

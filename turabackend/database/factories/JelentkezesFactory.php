@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Tura;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,14 @@ class JelentkezesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::all()->random()->id,
+            'tura_id' => Tura::all()->random()->id,
+            'jelentkezes_datuma' => fake()->date(),
+            'fizetve' => rand(0,1)
+
+        
+            
+
         ];
     }
 }
