@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Tura extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    
 
     protected $fillable = [
-        'tipus',
+        'tipus_id',
         'idopont',
         'turavezeto',
         'ar',

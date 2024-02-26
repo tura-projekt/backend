@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('adress');
+            $table->date('regisztracio_datuma');
+            $table->integer('telefonszam');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('jelszo');
             $table->rememberToken();
             $table->timestamps();
         });

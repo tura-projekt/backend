@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('turas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipus')->references('tipus')->on('turatipuses');
+            $table->foreignId('tipus_id')->references('tipus_id')->on('turatipuses');
             $table->date('idopont');
-            $table->integer('turavezeto');
+            $table->foreignId('turavezeto')->references('id')->on('turavezetos');
             $table->integer('ar'); 
             $table->integer('min_letszam'); 
             $table->integer('max_letszam');

@@ -10,7 +10,7 @@ class Turatipus extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected  $primaryKey = 'tipus';
+    protected  $primaryKey = 'tipus_id';
     protected $fillable = [
         'turanev',
         'tajegyseg',
