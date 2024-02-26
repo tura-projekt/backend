@@ -17,8 +17,9 @@ class TuraFactory extends Factory
     public function definition(): array
     {
         return [
+            'id' => rand(1, 1000),
             'tipus' => rand(1, 1000),
-            'idopont' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
+            'idopont' => fake()->dateTimeBetween('2000-01-01', '2023-10-10') ->format('Y-m-d'),
             'turavezeto' => rand(1, 1000),
             'ar' => rand(1, 5),
             'min_letszam' => rand(1, 50),

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Turatipus extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected  $primaryKey = 'tipus';
     protected $fillable = [
