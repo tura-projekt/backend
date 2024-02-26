@@ -23,7 +23,6 @@ class User extends Authenticatable
         'adress',
         'regisztracio_datuma',
         'telefon',
-
         'jelszo',
     ];
 

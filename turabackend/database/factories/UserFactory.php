@@ -26,21 +26,11 @@ class UserFactory extends Factory
         return [
             'name' => fake('hu_HU')->name(),
             'email' => fake('hu_HU')->unique()->safeEmail(),
-            
-        
             'adress' => fake('hu_HU')->address(),
-            
             'regisztracio_datuma' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
-
-                'telefonszam' => rand(111111, 9999999),
-    
-
-
-
-            'jelszo' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 
+            'telefonszam' => rand(111111, 9999999),
+            'jelszo' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             'remember_token' => Str::random(10),
-
-            
         ];
     }
 
