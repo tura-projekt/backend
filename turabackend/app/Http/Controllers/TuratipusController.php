@@ -22,8 +22,16 @@ class TuratipusController extends Controller
     public function store(Request $request)
     {
         $turatipus = new Turatipus();
-        $turatipus->author = $request->author;
-        $turatipus->title = $request->title;
+        $turatipus->tipus_id = $request->tipus_id;
+        $turatipus->turanev = $request->turanev;
+        $turatipus->tajegyseg = $request->tajegyseg;
+        $turatipus->nehezseg = $request->nehezseg;
+        $turatipus->tavolsag = $request->tavolsag;
+        $turatipus->szintkulonbseg = $request->szintkulonbseg;
+        $turatipus->kerekpar = $request->kerekpar;
+        $turatipus->indulashelye = $request->indulashelye;
+        $turatipus->erkezeshelye = $request->erkezeshelye;
+        $turatipus->leiras = $request->leiras;
         $turatipus->save();
     }
 
