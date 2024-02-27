@@ -22,16 +22,24 @@ class TuravezetoController extends Controller
     public function store(Request $request)
     {
         $turavezeto = new Turavezeto();
-        $turavezeto->author = $request->author;
-        $turavezeto->title = $request->title;
+        $turavezeto->id = $request->id;
+        $turavezeto->name = $request->name;
+        $turavezeto->email = $request->email;
+        $turavezeto->adress = $request->adress;
+        $turavezeto->telefonszam = $request->telefonszam;
+        $turavezeto->belepesdatuma = $request->belepesdatuma;
         $turavezeto->save();
     }
 
     public function update(Request $request, $id)
     {
         $turavezeto = Turavezeto::find($id);
-        $turavezeto->author = $request->author;
-        $turavezeto->title = $request->title;
+        $turavezeto->id = $request->id;
+        $turavezeto->name = $request->name;
+        $turavezeto->email = $request->email;
+        $turavezeto->adress = $request->adress;
+        $turavezeto->telefonszam = $request->telefonszam;
+        $turavezeto->belepesdatuma = $request->belepesdatuma;
         $turavezeto->save();
     }
     public function destroy($id)
