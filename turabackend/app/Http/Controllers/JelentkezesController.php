@@ -13,25 +13,22 @@ class JelentkezesController extends Controller
         return $jelentkezesek;
     }
 
-    public function show($id)
+    public function show($user_id, $tura_id)
     {
-        $jelentkezes = response()->json(Jelentkezes::find($id));
-        return $jelentkezes;
+        return Jelentkezes::where('user_id', $user_id)->where('tura_id', $tura_id)->first();
     }
 
     public function store(Request $request)
     {
         $jelentkezes = new Jelentkezes();
-        $jelentkezes->author = $request->author;
-        $jelentkezes->title = $request->title;
+        $jelentkezes->fill($request->all());
         $jelentkezes->save();
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $user_id, $tura_id)
     {
-        $jelentkezes = Jelentkezes::find($id);
-        $jelentkezes->author = $request->author;
-        $jelentkezes->title = $request->title;
+        $jelentkezes = $this->show($user_id, $tura_id);
+        $jelentkezes->fill($request->all());
         $jelentkezes->save();
     }
     public function destroy($id)

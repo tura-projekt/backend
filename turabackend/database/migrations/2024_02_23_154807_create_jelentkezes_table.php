@@ -16,8 +16,6 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('tura_id')->references('id')->on('turas');
             $table->date('jelentkezes_datuma');
-            
-            
             $table->boolean('fizetve')->default(0);
             $table->timestamps();
         });

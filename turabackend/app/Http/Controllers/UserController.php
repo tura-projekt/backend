@@ -22,8 +22,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
-        $user->author = $request->author;
-        $user->title = $request->title;
+        $user->id = $request->id;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->adress = $request->adress;
+        $user->regisztracio_datuma = $request->regisztracio_datuma;
+        $user->telefonszam = $request->telefonszam;
+        $user->email_verified_at = $request->email_verified_at;
+        $user->jelszo = $request->jelszo;
+        $user->rememberToken = $request->rememberToken;
         $user->save();
     }
 

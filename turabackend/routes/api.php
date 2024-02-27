@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/turak', [TuraController::class, 'index']);
-Route::get('/turak/{id}', [TuraController::class, 'show']);
+Route::get('/turak/{tipus_id}', [TuraController::class, 'show']);
 Route::post('/turak', [TuraController::class, 'store']);
 Route::put('/turak/{id}', [TuraController::class, 'update']);
 Route::delete('/turak/{id}', [TuraController::class, 'destroy']);
@@ -42,7 +42,7 @@ Route::put('/turatipusok/{id}', [TuratipusController::class, 'update']);
 Route::delete('/turatipusok/{id}', [TuratipusController::class, 'destroy']);
 
 Route::get('/jelentkezesek', [JelentkezesController::class, 'index']);
-Route::get('/jelentkezesek/{user_id}{tura_id}', [JelentkezesController::class, 'show']);
+Route::get('/jelentkezesek/{user_id}/{tura_id}', [JelentkezesController::class, 'show']);
 Route::post('/jelentkezesek', [JelentkezesController::class, 'store']);
 Route::put('/jelentkezesek/{id}', [JelentkezesController::class, 'update']);
 Route::delete('/jelentkezesek/{id}', [JelentkezesController::class, 'destroy']);

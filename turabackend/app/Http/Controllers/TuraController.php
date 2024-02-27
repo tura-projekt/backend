@@ -22,8 +22,13 @@ class TuraController extends Controller
     public function store(Request $request)
     {
         $tura = new Tura();
-        $tura->author = $request->author;
-        $tura->title = $request->title;
+        $tura->id = $request->id;
+        $tura->tipus_id = $request->tipus_id;
+        $tura->idopont = $request->idopont;
+        $tura->turavezeto = $request->turavezeto;
+        $tura->ar = $request->ar;
+        $tura->min_letszam = $request->min_letszam;
+        $tura->max_letszam = $request->max_letszam;
         $tura->save();
     }
 
