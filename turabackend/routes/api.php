@@ -54,5 +54,5 @@ Route::put('/users/{id}', [UserController::class, 'update']);
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
 
-
+Route::get('/jelentkezesek/{user_id}', [JelentkezesController::class, 'userJelentkezesek']);
 
