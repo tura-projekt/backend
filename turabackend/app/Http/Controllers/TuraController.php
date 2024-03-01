@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jelentkezes;
 use App\Models\Tura;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TuraController extends Controller
 {
@@ -44,4 +46,29 @@ class TuraController extends Controller
         //find helyett a paraméter
         Tura::find($id)->delete();
     }
+
+    public function induloTura()
+    {
+        return DB::table('turas as t')
+            ->selectRaw('t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam')
+            ->join('jelentkezes as j', 't.id', 'j.tura_id')
+            ->where('t.idopont', '>', date('Y-m-d'))
+            ->get();
+    }
+/*     {
+        return DB::table('lendings as l')
+            ->selectRaw('title, author')
+            ->join('copies as c', 'l.copy_id', 'c.copy_id')
+            ->join('books as b', 'c.book_id', 'b.book_id')
+            ->where('end', $myDate)
+            ->get();
+    }
+
+    {
+        return DB::table('jelentkezes as j')
+            ->selectRaw('j.*, t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam')
+            ->join('turas as t', 'j.tura_id', 't.id')
+            ->where('user_id', $user_id)
+            ->get();
+    } */
 }

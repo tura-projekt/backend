@@ -55,4 +55,5 @@ Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
 
 Route::get('/jelentkezesek/{user_id}', [JelentkezesController::class, 'userJelentkezesek']);
+Route::get('/indulotura', [TuraController::class, 'induloTura']);
 
