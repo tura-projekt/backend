@@ -50,12 +50,30 @@ class TuraController extends Controller
     public function induloTura()
     {
         return DB::table('turas as t')
-            ->selectRaw('t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam')
-            ->join('jelentkezes as j', 't.id', 'j.tura_id')
-            ->where('t.idopont', '>', date('Y-m-d'))
+            ->selectRaw('t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam, count(j.fizetve) as jelentkezett')
+            ->join('jelentkezes as j', 'j.tura_id', '=', 't.id')
+            //->where('j.fizetve', '=', '1')
+            // ->where('t.idopont', '=', date('Y-m-d', strtotime("-3 days")))
+            ->havingRaw('jelentkezett = t.min_letszam')
+            ->groupBy('t.idopont', 't.turavezeto', 't.ar', 't.min_letszam', 't.max_letszam')
             ->get();
     }
-/*     {
+
+    public function induloTura2()
+    {
+        return DB::table('turas as t')
+            ->selectRaw('t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam')
+            ->join('jelentkezes as j', 'j.user_id', 'j.tura_id', 'j.fizetve')
+            ->selectRaw('count(j.fizetve) as jelentkezett')
+            ->where('j.fizetve', '<', 't.min_letszam')
+            ->count('j.fizetve', '=', '1');
+            //->where('t.idopont', '=', date('Y-m-d', strtotime("-3 days")))
+            //->count('j.fizetve') > ('t.min_letszam')
+            //where('status','=','1')->count();
+            //->get();
+    }
+
+    /*     {
         return DB::table('lendings as l')
             ->selectRaw('title, author')
             ->join('copies as c', 'l.copy_id', 'c.copy_id')
