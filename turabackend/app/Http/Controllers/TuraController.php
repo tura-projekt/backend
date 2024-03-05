@@ -57,7 +57,20 @@ class TuraController extends Controller
             ->havingRaw('jelentkezett = t.min_letszam')
             ->groupBy('t.idopont', 't.turavezeto', 't.ar', 't.min_letszam', 't.max_letszam')
             ->get();
+    }public function induloTura_b()
+    {
+        return DB::table('turas as t')
+            ->selectRaw('t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam, count(j.fizetve) as jelentkezett')
+            ->join('jelentkezes as j', 'j.tura_id', '=', 't.id')
+            //->where('j.fizetve', '=', '1')
+            // ->where('t.idopont', '=', date('Y-m-d', strtotime("-3 days")))
+            ->havingRaw('jelentkezett = t.max_letszam')
+            ->groupBy('t.idopont', 't.turavezeto', 't.ar', 't.min_letszam', 't.max_letszam')
+            ->get();
     }
+
+
+
 
     public function induloTura2()
     {
