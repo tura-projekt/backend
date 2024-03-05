@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('ar'); 
             $table->integer('min_letszam'); 
             $table->integer('max_letszam');
+            $table->integer('statusz')->default(0);
             //$table->timestamps();
         });
     }

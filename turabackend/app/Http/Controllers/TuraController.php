@@ -31,14 +31,21 @@ class TuraController extends Controller
         $tura->ar = $request->ar;
         $tura->min_letszam = $request->min_letszam;
         $tura->max_letszam = $request->max_letszam;
+        $tura->statusz = $request->statusz;
         $tura->save();
     }
 
     public function update(Request $request, $id)
     {
         $tura = Tura::find($id);
-        $tura->author = $request->author;
-        $tura->title = $request->title;
+        $tura->id = $request->id;
+        $tura->tipus_id = $request->tipus_id;
+        $tura->idopont = $request->idopont;
+        $tura->turavezeto = $request->turavezeto;
+        $tura->ar = $request->ar;
+        $tura->min_letszam = $request->min_letszam;
+        $tura->max_letszam = $request->max_letszam;
+        $tura->statusz = $request->statusz;
         $tura->save();
     }
     public function destroy($id)
@@ -50,13 +57,14 @@ class TuraController extends Controller
     public function induloTura()
     {
         return DB::table('turas as t')
-            ->selectRaw('t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam, count(j.fizetve) as jelentkezett')
+            ->selectRaw('t.idopont, t.turavezeto, t.ar, t.min_letszam, t.max_letszam, t.statusz, count(j.fizetve) as jelentkezett')
             ->join('jelentkezes as j', 'j.tura_id', '=', 't.id')
-            //->where('j.fizetve', '=', '1')
-            // ->where('t.idopont', '=', date('Y-m-d', strtotime("-3 days")))
-            ->havingRaw('jelentkezett = t.min_letszam')
-            ->groupBy('t.idopont', 't.turavezeto', 't.ar', 't.min_letszam', 't.max_letszam')
-            ->get();
+            ->where('t.idopont', '=', date('Y-m-d', strtotime("-3 days")))
+            ->havingRaw('jelentkezett < t.min_letszam')
+            ->groupBy('t.idopont', 't.turavezeto', 't.ar', 't.min_letszam', 't.max_letszam', 't.statusz')
+            ->update(['statusz' => 1]);
+            
+            
     }public function induloTura_b()
     {
         return DB::table('turas as t')

@@ -18,5 +18,6 @@ class Tura extends Model
         'ar',
         'min_letszam',
         'max_letszam',
+        'statusz'
     ];
 }

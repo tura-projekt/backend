@@ -21,7 +21,7 @@ class JelentkezesFactory extends Factory
         return [
             'user_id' => User::all()->random()->id,
             'tura_id' => Tura::all()->random()->id,
-            'jelentkezes_datuma' => fake()->date(),
+            'jelentkezes_datuma' => fake()->dateTimeBetween('2024-03-01', '2024-10-10'),
             'fizetve' => rand(0,1)
 
         
