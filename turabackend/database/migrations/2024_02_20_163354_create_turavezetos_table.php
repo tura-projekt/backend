@@ -19,9 +19,9 @@ return new class extends Migration
             $table->integer('telefonszam');
             $table->date('belepesdatuma');
             $table->timestamps();
-        });
+        });       
+           
     }
-
     /**
      * Reverse the migrations.
      */
