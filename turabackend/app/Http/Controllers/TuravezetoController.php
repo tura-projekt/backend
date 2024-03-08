@@ -25,7 +25,7 @@ class TuravezetoController extends Controller
         $turavezeto->id = $request->id;
         $turavezeto->name = $request->name;
         $turavezeto->email = $request->email;
-        $turavezeto->adress = $request->adress;
+        $turavezeto->cim = $request->cim;
         $turavezeto->telefonszam = $request->telefonszam;
         $turavezeto->belepesdatuma = $request->belepesdatuma;
         $turavezeto->save();
@@ -37,7 +37,7 @@ class TuravezetoController extends Controller
         $turavezeto->id = $request->id;
         $turavezeto->name = $request->name;
         $turavezeto->email = $request->email;
-        $turavezeto->adress = $request->adress;
+        $turavezeto->cim = $request->cim;
         $turavezeto->telefonszam = $request->telefonszam;
         $turavezeto->belepesdatuma = $request->belepesdatuma;
         $turavezeto->save();

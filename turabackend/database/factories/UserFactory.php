@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'adress' => fake('hu_HU')->address(),
             'regisztracio_datuma' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
             'telefonszam' => random_int(111111, 9999999),
-            'jelszo' => static::$password ??= Hash::make('jelszo'),
+            'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
             //'email_verified_at' => now(),
       
