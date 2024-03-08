@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Turatipus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,6 +25,19 @@ return new class extends Migration
             $table->string('leiras');
             $table->timestamps();
         });
+
+        Turatipus::create([
+            'tipus_id' => 1,
+            'turanev' => "Lankás",
+            'tajegyseg' => "Balaton felvidék",
+            'nehezseg' => "közepes",
+            'tavolsag' => "20",
+            'szintkulonbseg' => "500",
+            'kerekpar' => "1",
+            'indulashelye' => "Balatonszemes",
+            'erkezeshelye' => "Tihany",
+            'leiras' => "üres",
+        ]);
     }
 
     /**

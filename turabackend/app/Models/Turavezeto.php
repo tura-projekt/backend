@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Turavezeto extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $fillable = [
         'name',
         'email',
-        'adress',
+        'cim',
         'telefonszam',
         'belepesdatuma'
     ];

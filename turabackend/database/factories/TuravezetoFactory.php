@@ -19,7 +19,7 @@ class TuravezetoFactory extends Factory
         return [
             'name' => fake('hu_HU')->name(),
             'email' => fake('hu_HU')->email(),
-            'adress' => fake('hu_HU')->address(),
+            'cim' => fake('hu_HU')->address(),
             'telefonszam' => rand(111111, 9999999),
             'belepesdatuma' => fake()->dateTimeBetween('2000-01-01', '2023-10-10')
         ];
