@@ -63,6 +63,25 @@ return new class extends Migration
             'erkezeshelye' => "Dorog",
             'leiras' => "Dorog-Kesztölc-Klastrompuszta-PilisSzántó-Pilisszentkereszt--Két-bükkfa-nyereg--Pilisszentlélek--Esztergom-Kertváros--Dorog",
         ]);
+        
+        Turatipus::create([
+            'tipus_id' => 3,
+            'turanev' => "Dunakanyar_kör",
+            'tajegyseg' => "Dunakanyar",
+            'nehezseg' => "nehéz",
+            'tavolsag' => "55",
+            'szintkulonbseg' => "600",
+            'kerekpar' => "1",
+            'indulashelye' => "Szentendre",
+            'erkezeshelye' => "Szentendre",
+            'leiras' => "Szentendre-Skanzen--Papp-rét---Apátkúti-völgy-Visegrád-Nagymaros-Kismaros-Verőce-Vác-Tahitótfalu-Pócsmegyer-Szentendrei-sziget-Szentendre",
+        ]);
+
+
+
+
+
+
 
 
 
