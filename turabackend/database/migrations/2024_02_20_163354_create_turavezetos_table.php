@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('cim');
             $table->string('telefonszam');
             $table->date('belepesdatuma');
-            $table->timestamps();
+            //$table->timestamps();
         });  
         
         Turavezeto::create([

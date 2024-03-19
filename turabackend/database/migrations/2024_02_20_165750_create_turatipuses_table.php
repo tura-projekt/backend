@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('indulashelye');
             $table->string('erkezeshelye');
             $table->string('leiras');
-            $table->timestamps();
+            //$table->timestamps();
         });
 
         Turatipus::create([
