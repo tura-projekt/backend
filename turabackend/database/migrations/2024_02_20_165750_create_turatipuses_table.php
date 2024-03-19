@@ -26,7 +26,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Turatipus::create([
+        /*Turatipus::create([
             'tipus_id' => 1,
             'turanev' => "Lankás",
             'tajegyseg' => "Balaton felvidék",
@@ -37,7 +37,43 @@ return new class extends Migration
             'indulashelye' => "Balatonszemes",
             'erkezeshelye' => "Tihany",
             'leiras' => "üres",
+        ]); */
+        Turatipus::create([
+            'tipus_id' => 1,
+            'turanev' => "Nagybörzsönyi_kör",
+            'tajegyseg' => "Börzsöny",
+            'nehezseg' => "nehéz",
+            'tavolsag' => "51",
+            'szintkulonbseg' => "900",
+            'kerekpar' => "1",
+            'indulashelye' => "Szob",
+            'erkezeshelye' => "Szob",
+            'leiras' => "Szob-Ipolynádasd-Letkés-Ipolytölgyes-Nagybörzsöny--Farkas-völgy--Nagyírtás-Kisinóczi th.-Kóspallag-Márianosztra-Szob",
+        ]); 
+        
+        Turatipus::create([
+            'tipus_id' => 2,
+            'turanev' => "Pilis_kör",
+            'tajegyseg' => "Pilis",
+            'nehezseg' => "nehéz",
+            'tavolsag' => "42",
+            'szintkulonbseg' => "800",
+            'kerekpar' => "1",
+            'indulashelye' => "Dorog",
+            'erkezeshelye' => "Dorog",
+            'leiras' => "Dorog-Kesztölc-Klastrompuszta-PilisSzántó-Pilisszentkereszt--Két-bükkfa-nyereg--Pilisszentlélek--Esztergom-Kertváros--Dorog",
         ]);
+
+
+
+
+
+
+        
+
+
+
+
     }
 
     /**
