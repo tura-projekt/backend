@@ -88,6 +88,22 @@ return new class extends Migration
             'erkezeshelye' => "Bakonybél",
             'leiras' => "Bakonybél--Szarvad-árok--Odvaskő-barlang--Gerence-völgy--Tábor-hegy, Széchenyi-emlékkő--Bakonybél",
         ]);
+        
+        Turatipus::create([
+            'tipus_id' => 5,
+            'turanev' => "Dunakanyar-panoráma",
+            'tajegyseg' => "Börzsöny",
+            'nehezseg' => "középnehéz",
+            'tavolsag' => "9",
+            'szintkulonbseg' => "500",
+            'kerekpar' => "0",
+            'indulashelye' => "Nagymaros",
+            'erkezeshelye' => "Zebegény",
+            'leiras' => "Nagymaros--Rigó-hegy-Szent_mihály-hegy--Ördög-hegy--Dobozi-orom--Borosktyán-kő--Zebegény",
+        ]);
+
+
+
 
 
 
