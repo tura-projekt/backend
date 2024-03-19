@@ -23,7 +23,8 @@ class User extends Authenticatable
         'email',
         'regisztracio_datuma',
         'telefonszam',
-        'password'
+        'password',
+        'permission',
     ];
 
     /**
@@ -45,4 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function jelentkezesek()
+    {   /* ott hogy hívják, itt hogy hívják  */
+        return $this->hasMany(Jelentkezes::class, 'user_id', 'id');   }
 }

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('telefonszam');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('permission')->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -33,7 +34,7 @@ return new class extends Migration
             'telefonszam' => '+36901234567',
             'email_verified_at' => '2023.01.15',
             'password' => Hash::make('abrakadabra'),
-            //'permission' => 'admin'
+            'permission' => 'admin'
         ]);
     }
 

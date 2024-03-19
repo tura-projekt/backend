@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+
+
 
 class UserController extends Controller
 {
@@ -29,6 +34,7 @@ class UserController extends Controller
         $user->telefonszam = $request->telefonszam;
         $user->email_verified_at = $request->email_verified_at;
         $user->password = $request->password;
+        $user->permission = $request->permission;
         $user->rememberToken = $request->rememberToken;
         $user->save();
     }
@@ -43,6 +49,7 @@ class UserController extends Controller
         $user->telefonszam = $request->telefonszam;
         $user->email_verified_at = $request->email_verified_at;
         $user->password = $request->password;
+        $user->permission = $request->permission;
         $user->rememberToken = $request->rememberToken;
         $user->save();
     }
@@ -50,5 +57,27 @@ class UserController extends Controller
     {
         //find helyett a paraméter
         User::find($id)->delete();
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            "password" => 'string|min:3|max:50'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(["message" => $validator->errors()->all()], 400);
+        }
+        $user = User::where("id", $id)->update([
+            "password" => Hash::make($request->password),
+        ]);
+        /* return response()->json(["user" => $user]); */
+    }
+
+    public function lendingByUser(){
+        $user = Auth::user();	//bejelentkezett felhasználó
+        $lendings = User::with('jelentkezesek') //a függvény neve
+        ->where('id','=',$user->id)
+        ->get();
+        return $lendings;
     }
 }
