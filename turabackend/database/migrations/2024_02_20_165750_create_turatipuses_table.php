@@ -76,6 +76,23 @@ return new class extends Migration
             'erkezeshelye' => "Szentendre",
             'leiras' => "Szentendre-Skanzen--Papp-rét---Apátkúti-völgy-Visegrád-Nagymaros-Kismaros-Verőce-Vác-Tahitótfalu-Pócsmegyer-Szentendrei-sziget-Szentendre",
         ]);
+         Turatipus::create([
+            'tipus_id' => 4,
+            'turanev' => "Bakonybél_körút",
+            'tajegyseg' => "Bakony",
+            'nehezseg' => "középnehéz",
+            'tavolsag' => "11",
+            'szintkulonbseg' => "400",
+            'kerekpar' => "0",
+            'indulashelye' => "Bakonybél",
+            'erkezeshelye' => "Bakonybél",
+            'leiras' => "Bakonybél--Szarvad-árok--Odvaskő-barlang--Gerence-völgy--Tábor-hegy, Széchenyi-emlékkő--Bakonybél",
+        ]);
+
+
+
+
+
 
 
 
