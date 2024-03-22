@@ -26,7 +26,7 @@ class UserFactory extends Factory
         return [
             'name' => fake('hu_HU')->name(),
             'email' => fake('hu_HU')->unique()->safeEmail(),
-            'adress' => fake('hu_HU')->address(),
+            //'adress' => fake('hu_HU')->address(),
             'regisztracio_datuma' => fake()->dateTimeBetween('2000-01-01', '2023-10-10'),
             'telefonszam' => random_int(111111, 9999999),
             'password' => static::$password ??= Hash::make('password'),

@@ -30,9 +30,9 @@ return new class extends Migration
             'id' => 1,
             'name' => 'Admin', 
             'email' => 'admin@zorotours.com', 
-            'regisztracio_datuma' => '2023.01.15',
+            'regisztracio_datuma' => '2023-01-15',
             'telefonszam' => '+36901234567',
-            'email_verified_at' => '2023.01.15',
+            'email_verified_at' => '2023-01-15',
             'password' => Hash::make('abrakadabra'),
             'permission' => 'admin'
         ]);
