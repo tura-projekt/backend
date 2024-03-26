@@ -36,6 +36,16 @@ return new class extends Migration
             'password' => Hash::make('abrakadabra'),
             'permission' => 'admin'
         ]);
+
+        User::create([
+            'id' => 2,
+            'name' => 'User', 
+            'email' => 'user@zorotours.com', 
+            'regisztracio_datuma' => '2023-01-15',
+            'telefonszam' => '+36901234567',
+            'email_verified_at' => '2023-01-15',
+            'password' => Hash::make('abrakadabra'),
+        ]);
     }
 
     /**

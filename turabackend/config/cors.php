@@ -20,7 +20,7 @@ return [
     'allowed_methods' => ['*'],
 
     //'allowed_origins' => [env('*')],
-    'allowed_origins' => [env('http://localhost:5500', 'http://localhost:8000')],
+    'allowed_origins' => [env('*', '*')],
 
     'allowed_origins_patterns' => [],
 

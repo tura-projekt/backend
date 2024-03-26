@@ -43,7 +43,7 @@ Route::middleware('auth.basic')->group(function () {
     Route::put('/turavezetok/{id}', [TuravezetoController::class, 'update']);
     Route::delete('/turavezetok/{id}', [TuravezetoController::class, 'destroy']);
 
-    //Route::get('/turatipusok', [TuratipusController::class, 'index']);
+    Route::get('/turatipusok', [TuratipusController::class, 'index']);
     Route::get('/turatipusok/{id}', [TuratipusController::class, 'show']);
     Route::post('/turatipusok', [TuratipusController::class, 'store']);
     Route::put('/turatipusok/{id}', [TuratipusController::class, 'update']);
@@ -56,7 +56,7 @@ Route::middleware('auth.basic')->group(function () {
     Route::delete('/jelentkezesek/{id}', [JelentkezesController::class, 'destroy']);
 
     Route::get('/users', [UserController::class, 'index']);
-    Route::get('/users/{id}', [UserController::class, 'show']);
+    Route::get('/users/{user_id}', [UserController::class, 'show']);
     Route::post('/users', [UserController::class, 'store']);
     Route::put('/users/{id}', [UserController::class, 'update']);
     Route::delete('/users/{id}', [UserController::class, 'destroy']);
@@ -66,5 +66,3 @@ Route::middleware('auth.basic')->group(function () {
     Route::get('/indulotura', [TuraController::class, 'induloTura']);
     Route::get('/indulotura_b', [TuraController::class, 'induloTura_b']);
 });
-
-Route::get('/turatipusok', [TuratipusController::class, 'index']);
