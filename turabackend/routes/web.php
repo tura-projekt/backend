@@ -21,4 +21,8 @@ Route::get('/token', function () {
     return request()->session()->token();
 });
 
+Route::get('/dashboard', function () {
+    return ['data' => 'Dashboard'];
+});
+
 require __DIR__.'/auth.php';

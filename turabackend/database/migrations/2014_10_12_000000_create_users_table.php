@@ -32,7 +32,7 @@ return new class extends Migration
             'email' => 'admin@zorotours.com', 
             'regisztracio_datuma' => '2023-01-15',
             'telefonszam' => '+36901234567',
-            'email_verified_at' => '2023-01-15',
+            'email_verified_at' => now(),
             'password' => Hash::make('abrakadabra'),
             'permission' => 'admin'
         ]);
@@ -43,7 +43,7 @@ return new class extends Migration
             'email' => 'user@zorotours.com', 
             'regisztracio_datuma' => '2023-01-15',
             'telefonszam' => '+36901234567',
-            'email_verified_at' => '2023-01-15',
+            'email_verified_at' => now(),
             'password' => Hash::make('abrakadabra'),
         ]);
     }

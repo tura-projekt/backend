@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jelentkezes extends Model
 {
-    use HasFactory;protected function setKeysForSaveQuery($query)
+    use HasFactory;
+    protected function setKeysForSaveQuery($query)
     {
         $query
             ->where('user_id', '=', $this->getAttribute('user_id'))
@@ -18,8 +19,7 @@ class Jelentkezes extends Model
         'user_id',
         'tura_id',
         'jelentkezes_datuma',
-        'fizetve'
-        
+        'fizetve',       
     ];
 
 

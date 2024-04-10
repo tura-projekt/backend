@@ -42,7 +42,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-       $user->id = $request->id;
+        $user->id = $request->id;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->regisztracio_datuma = $request->regisztracio_datuma;
@@ -73,11 +73,12 @@ class UserController extends Controller
         /* return response()->json(["user" => $user]); */
     }
 
-    public function lendingByUser(){
-        $user = Auth::user();	//bejelentkezett felhasználó
-        $lendings = User::with('jelentkezesek') //a függvény neve
-        ->where('id','=',$user->id)
-        ->get();
-        return $lendings;
+    public function lendingByUser()
+    {
+        $user = Auth::user();    //bejelentkezett felhasználó
+        $jelenkezesek = User::with('jelentkezesek') //a függvény neve
+            ->where('id', '=', $user->id)
+            ->get();
+        return $jelenkezesek;
     }
 }
